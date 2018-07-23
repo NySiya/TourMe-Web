@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180723072604) do
+ActiveRecord::Schema.define(version: 20180723082251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,9 +54,12 @@ ActiveRecord::Schema.define(version: 20180723072604) do
     t.string "cover_image", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "country_id"
+    t.index ["country_id"], name: "index_places_on_country_id"
   end
 
   add_foreign_key "galleries", "places"
   add_foreign_key "place_categories", "categories"
   add_foreign_key "place_categories", "places"
+  add_foreign_key "places", "countries"
 end
