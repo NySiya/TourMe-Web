@@ -17,6 +17,17 @@ gem 'dotenv-rails', '~> 2.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
+end
+
+group :test do
+  gem 'rspec-rails',       '~> 3.7', '>= 3.7.2'
+  gem 'capybara',          '~> 3.4', '>= 3.4.1'
+  gem 'poltergeist',       '~> 1.18', '>= 1.18.1'
+  gem 'shoulda-matchers',  '~> 3.1', '>= 3.1.2'
+  gem 'factory_bot_rails', '~> 4.10'
+  gem 'ffaker',            '~> 2.9'
+  gem 'launchy',           '~> 2.4', '>= 2.4.3'
 end
 
 group :development do
